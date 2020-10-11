@@ -1,0 +1,33 @@
+Florea Andrei-Bogdan, 313CD
+
+Implementare generala
+
+Am folosit 3 fisiere: util.h (in care sunt declarate structurile si functiile asociate acestora),
+util.c (care contine implementarea functiilor declarate in util.h), si main.c, programul
+principal.
+La inceput, in timpul citirii fisierului si implicit si a construirii grafului (functia constructGraph),
+a trebuit sa gasesc o metoda prin care sa codific numele actorilor in numere unice (numerotarea
+nodurilor grafului). In acest scop am implementat un hashtable, care face intocmai aceasta asociere,
+si puteam sa adaug muchie intre indecsii returnati de functia insertInHashTable.
+Dupa crearea efectiva a grafului, am putut sa ma apuc de cerinte.
+
+Cerinta 1
+
+Practic, valoarea ceruta este numarul maxim de noduri ale unei componente conexe. Am realizat acest
+calcul cu ajutorul algoritmului DFS, pornindu-l din fiecare nod nevizitat inca, si mentinand pe
+parcusul sau un contor al numarului de noduri din componenta conexa curenta (steps din functia dfs).
+
+Cerinta 2
+
+Distanta dintre doua noduri se poate stabili usor cu ajutorul algoritmului BFS, deoarece acesta
+garanteaza ca, la prima intalnire a nodului cautat, distanta este minima.
+Aici am avut nevoie de implementarea unei cozi, pe care am folosit-o efectiv in BFS.
+De asemenea, tot la aceasta cerinta, deoarece aveam nodurile intre care trebuia sa aflu distanta
+date ca nume de actori, a trebuit sa aflu indecsii corespunzatori ai acestor actori (functia getIndex,
+care se bazeaza pe un vector, node_names, care realizeaza corespondenta intre numerotarea nodului
+si numele actorului).
+
+Cerinta 3
+Am implementat, pas cu pas, algoritmul explicat in enunt, iar puntile le-am salvat intr-o structura, 
+deoarece trebuiau si ordonati actorii care formeaza punti.
+
